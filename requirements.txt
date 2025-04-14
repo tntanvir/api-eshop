@@ -2,6 +2,7 @@ asgiref
 Django
 django-cors-headers
 djangorestframework
+django-multiselectfield
 psycopg2-binary
 sqlparse
 tzdata
