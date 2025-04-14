@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-nze6rmvjgwi)o2#n-1o512!e$h(+)!iu6ib^ekvo^@pgeid=+^
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
-CSRF_TRUSTED_ORIGINS = ["https://api-project-name.com", "https://*.127.0.0.1"]
+
+
+CSRF_TRUSTED_ORIGINS = True
+
 
 # Application definition
 
@@ -47,8 +50,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,6 +62,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'shop.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 12,  # Number of products per page
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',  # If using token authentication
+    ],
+    
+
+    
+}
 
 TEMPLATES = [
     {
