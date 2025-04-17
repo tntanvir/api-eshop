@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-nze6rmvjgwi)o2#n-1o512!e$h(+)!iu6ib^ekvo^@pgeid=+^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ["https://api-phitbook.onrender.com","https://*.127.0.0.1"]
 
