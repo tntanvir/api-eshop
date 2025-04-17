@@ -27,10 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
+CSRF_TRUSTED_ORIGINS = ["https://api-phitbook.onrender.com","https://*.127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ["*"]
-
-
+APPEND_SLASH = False
 # Application definition
 
 INSTALLED_APPS = [
